@@ -442,4 +442,23 @@ window.addEventListener('load', function() {
             preloader.style.display = 'none';
         }, 300);
     }
+    // Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add animation styles
+    document.head.insertAdjacentHTML('beforeend', animationStyles);
+    
+    // Initialize all managers
+    new ThemeManager();
+    new NavigationManager();
+    new SkillsAnimator();
+    new ContactFormHandler();
+    new AnimationObserver();
+    
+    // Add loading animation
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+
 });
