@@ -613,32 +613,235 @@ class ContactFormHandler {
 // Enhanced CV Download Handler
 class CVDownloadHandler {
     constructor() {
-        this.downloadButtons = document.querySelectorAll('#download-cv, #footer-cv');
+        this.cvDropdownBtn = document.getElementById('cv-dropdown-btn');
+        this.cvDropdownMenu = document.getElementById('cv-dropdown-menu');
+        this.cvDropdown = document.querySelector('.cv-dropdown');
+        this.academicCvBtn = document.getElementById('download-academic-cv');
+        this.professionalCvBtn = document.getElementById('download-professional-cv');
+        this.footerCvBtn = document.getElementById('footer-cv');
         this.init();
     }
 
     init() {
-        this.downloadButtons.forEach(button => {
-            button.addEventListener('click', (e) => this.handleDownload(e));
+        // CV Dropdown toggle
+        this.cvDropdownBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.toggleDropdown();
+        });
+
+        // Academic CV download
+        this.academicCvBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.handleDownload(e, 'academic');
+            this.closeDropdown();
+        });
+
+        // Professional CV download
+        this.professionalCvBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.handleDownload(e, 'professional');
+            this.closeDropdown();
+        });
+
+        // Footer CV download (default to academic)
+        this.footerCvBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.handleDownload(e, 'academic');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!this.cvDropdown?.contains(e.target)) {
+                this.closeDropdown();
+            }
         });
     }
 
-    handleDownload(e) {
+    toggleDropdown() {
+        this.cvDropdown?.classList.toggle('active');
+    }
+
+    closeDropdown() {
+        this.cvDropdown?.classList.remove('active');
+    }
+
+    handleDownload(e, type = 'academic') {
         e.preventDefault();
 
         // Add download animation
-        const button = e.currentTarget;
+        const button = e.target.closest('button') || e.target;
         button.style.transform = 'scale(0.95)';
         setTimeout(() => {
             button.style.transform = '';
         }, 150);
 
-        const cvContent = this.generateEnhancedCVContent();
-        this.downloadFile(cvContent, 'Puspita_Barua_CV.txt', 'text/plain');
-        this.showDownloadNotification();
+        const cvContent = type === 'academic' ? 
+            this.generateAcademicCVContent() : 
+            this.generateProfessionalCVContent();
+        
+        const filename = type === 'academic' ? 
+            'Puspita_Barua_Academic_CV.txt' : 
+            'Puspita_Barua_Professional_CV.txt';
+        
+        this.downloadFile(cvContent, filename, 'text/plain');
+        this.showDownloadNotification(type);
     }
 
-    generateEnhancedCVContent() {
+    generateAcademicCVContent() {
+        return `
+═══════════════════════════════════════════════════════════════
+                        PUSPITA BARUA
+           Undergraduate Student (Level 3, Term 2)
+        Electronics & Telecommunication Engineering
+        Chittagong University of Engineering & Technology (CUET)
+═══════════════════════════════════════════════════════════════
+
+📧 CONTACT INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Email: puspitabarua24.ctg@gmail.com
+Location: Chittagong, Bangladesh
+GitHub: https://github.com/PuspitaBarua
+Portfolio: [Your Portfolio URL]
+
+🎓 EDUCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Bachelor of Science - Electronics & Telecommunication Engineering
+Chittagong University of Engineering & Technology (CUET)
+Current Level: 3, Term 2 (Undergraduate Student)
+Expected Graduation: 2025
+
+Academic Performance:
+• Consistent academic excellence throughout undergraduate studies
+• Strong foundation in core engineering subjects
+• Active participation in laboratory work and practical sessions
+
+Higher Secondary Certificate (HSC) - Science Group
+Chittagong College | Year: 2021 | GPA: 5.00/5.00
+• Perfect score achievement in Science Group
+• Strong background in Physics, Chemistry, and Mathematics
+
+Secondary School Certificate (SSC) - Science Group
+Chittagong Engineering University School & College
+Year: 2019 | GPA: 5.00/5.00
+• Excellence in Sciences with perfect GPA
+• Foundation in analytical and problem-solving skills
+
+📚 ACADEMIC COURSEWORK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Core Engineering Subjects:
+• Digital Logic Design (Level 2, Term 2)
+• Digital Communication (Level 3, Term 1)
+• Internet Programming (Level 3, Term 1)
+• Circuit Analysis and Electronics
+• Signal Processing and Communication Systems
+• Microprocessor and Microcontroller Systems
+• Electromagnetic Theory and Applications
+
+Laboratory Experience:
+• Digital Logic Design Lab - Hardware implementation projects
+• Communication Systems Lab - Modulation/Demodulation experiments
+• Programming Lab - Software development and web technologies
+• Electronics Lab - Circuit design and testing
+
+💻 TECHNICAL SKILLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Programming Languages:
+• C (Advanced) - 90%
+• C++ (Advanced) - 85%
+• Python (Intermediate) - 80%
+• Java (Intermediate) - 75%
+• PHP (Intermediate) - 70%
+
+Web Technologies:
+• HTML5 (Expert) - 95%
+• CSS3 (Advanced) - 90%
+• JavaScript (Advanced) - 85%
+• MySQL (Advanced) - 80%
+
+Software & Tools:
+• MATLAB - Signal processing and simulation
+• Proteus - Circuit design and simulation
+• ADS (Advanced Design System) - RF/Microwave design
+
+Hardware & Embedded Systems:
+• Arduino programming and interfacing
+• Microcontroller programming (8051, PIC)
+• Circuit design and PCB layout
+• Digital and analog electronics
+
+🔬 RESEARCH INTERESTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Communication Systems & Signal Processing
+• Internet of Things (IoT) Applications
+• Digital Signal Processing Algorithms
+• Wireless Communication Technologies
+• Embedded Systems Design
+
+🚀 FEATURED PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Smart Guard: Hybrid Authentication Door Lock System
+   Academic Course: Digital Logic Design (Level 2, Term 2)
+   • Implemented multi-layer security with RFID, keypad, and biometric authentication
+   • Designed solenoid-based locking mechanism with fail-safe features
+   • Integrated real-time monitoring and alert system
+   • Grade: A+ (Outstanding Performance)
+   Technologies: Digital Logic, Microcontroller, Security Systems
+
+2. ASK Modulation & Demodulation Communication System
+   Academic Course: Digital Communication (Level 3, Term 1)
+   • Designed and implemented Amplitude Shift Keying system
+   • Performed comparative analysis between simulation and practical results
+   • Analyzed BER performance under different noise conditions
+   • Comprehensive report on theoretical vs practical implementation
+   Technologies: MATLAB, Signal Processing, Communication Theory
+
+3. Cookistry - Comprehensive Food Recipe Management Platform
+   Academic Course: Internet Programming (Level 3, Term 1)
+   • Developed full-stack web application with user authentication
+   • Implemented recipe sharing, rating, and recommendation system
+   • Designed responsive UI with advanced search and filtering
+   • Demonstrated proficiency in modern web development practices
+   Technologies: PHP, MySQL, HTML5, CSS3, JavaScript
+
+🏆 ACHIEVEMENTS & CERTIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Academic Achievements:
+• Perfect GPA (5.00/5.00) in both SSC and HSC examinations
+• Consistent high performance in undergraduate coursework
+• Recognition for excellence in laboratory work and projects
+• Strong analytical and problem-solving capabilities
+
+Extracurricular Activities:
+• Active participant in university technical competitions
+• Member of IEEE Student Branch, CUET Chapter
+• Volunteer in university technical events and workshops
+
+🎯 ACADEMIC OBJECTIVES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+As an undergraduate student in Electronics & Telecommunication Engineering,
+I am focused on:
+
+• Completing my degree with academic excellence
+• Gaining practical experience through internships and projects
+• Developing expertise in communication systems and digital technologies
+• Contributing to research in IoT and embedded systems
+• Preparing for advanced studies or industry opportunities
+
+📋 CURRENT ACADEMIC STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Level: 3, Term 2 (Undergraduate Student)
+Expected Graduation: 2025
+University: Chittagong University of Engineering & Technology (CUET)
+Department: Electronics & Telecommunication Engineering
+
+═══════════════════════════════════════════════════════════════
+Academic CV Generated on: ${new Date().toLocaleDateString()}
+Student Status: Undergraduate (Level 3, Term 2)
+═══════════════════════════════════════════════════════════════
+        `.trim();
+    }
+
+    generateProfessionalCVContent() {
         return `
 ═══════════════════════════════════════════════════════════════
                         PUSPITA BARUA
@@ -735,8 +938,9 @@ Hardware & Embedded Systems:
 • Problem-solving and analytical thinking
 • Team collaboration and leadership
 • Project management and documentation
-• Continuous learning and adaptation
-• Innovation and creative solution development
+• Continuous learning and adaptability
+• Strong communication skills
+• Attention to detail and quality assurance
 
 🎯 CAREER OBJECTIVE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -747,7 +951,7 @@ IoT applications, and embedded systems while continuing to grow
 professionally in a dynamic technology environment.
 
 ═══════════════════════════════════════════════════════════════
-Generated on: ${new Date().toLocaleDateString()}
+Professional CV Generated on: ${new Date().toLocaleDateString()}
 Last Updated: ${new Date().toLocaleDateString()}
 ═══════════════════════════════════════════════════════════════
         `.trim();
@@ -756,43 +960,48 @@ Last Updated: ${new Date().toLocaleDateString()}
     downloadFile(content, filename, mimeType) {
         const blob = new Blob([content], { type: mimeType });
         const url = window.URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
     }
 
-    showDownloadNotification() {
+    showDownloadNotification(type = 'academic') {
+        const cvType = type === 'academic' ? 'Academic CV' : 'Professional CV';
         const notification = document.createElement('div');
         notification.innerHTML = `
             <div style="display: flex; align-items: center; gap: 0.5rem;">
                 <i class="fas fa-download"></i>
-                <span>CV downloaded successfully!</span>
+                <span>${cvType} downloaded successfully!</span>
             </div>
         `;
         notification.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 1rem 1.5rem;
-            background: var(--success-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             z-index: 10000;
-            animation: slideInRight 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 500;
+            animation: slideInRight 0.3s ease-out;
         `;
 
         document.body.appendChild(notification);
 
         setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => notification.remove(), 300);
+            notification.style.animation = 'slideOutRight 0.3s ease-in forwards';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
         }, 3000);
     }
 }
