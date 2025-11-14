@@ -718,7 +718,7 @@ a:hover {
 .hero-description {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -728,7 +728,7 @@ a:hover {
 .hero-passion {
     font-size: 1rem;
     color: var(--text-muted);
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
     font-style: italic;
 }
 
@@ -841,8 +841,8 @@ a:hover {
 }
 
 .profile-image {
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     background: var(--gradient-primary);
     border: 6px solid var(--bg-primary);
@@ -855,12 +855,6 @@ a:hover {
     animation: float 3s ease-in-out infinite;
 }
 
-@media (max-width: 1024px) {
-    .hero-content {
-        grid-template-columns: 1fr 0.9fr; /* tablet e ratio adjust */
-    }
-    
- 
 .profile-photo {
     width: 100%;
     height: 100%;
@@ -2231,38 +2225,7 @@ a:hover {
         gap: var(--spacing-xl);
     }
 }
-.profile-image {
-    width: 350px;  /* size bariye 320px theke 350px */
-    height: 350px;
-}
 
-@media (max-width: 1024px) {
-    .hero-content {
-        grid-template-columns: 1fr 0.9fr; /* tablet e ratio adjust */
-    }
-    
-    .profile-image {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr; /* mobile e full width */
-        text-align: center; /* already আছে */
-    }
-    
-    .hero-image {
-        justify-content: center; /* mobile e center */
-        order: -1; /* image uporey dekhabe */
-    }
-    
-    .hero-text {
-        max-width: 100%;
-        padding-right: 0;
-    }
-}
 @media (max-width: 768px) {
     .hero-content {
     display: grid;
@@ -2277,18 +2240,9 @@ a:hover {
     }
     
     .hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    justify-content: flex-start; /* left align */
-}
-
-@media (max-width: 768px) {
-    .hero-buttons {
-        justify-content: center; /* mobile e center */
+        flex-direction: column;
+        align-items: center;
     }
-}
     
     .hero-stats {
         justify-content: center;
@@ -2421,4 +2375,4 @@ a:hover {
     .hero {
         padding-top: 0;
     }
-}
+}(wait for my next instruction)
