@@ -833,8 +833,8 @@ a:hover {
 }
 
 .profile-image {
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
     border-radius: 50%;
     background: var(--gradient-primary);
     border: 8px solid var(--bg-primary);
@@ -848,8 +848,8 @@ a:hover {
 }
 
 .profile-photo {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     border-radius: 50%;
 }
