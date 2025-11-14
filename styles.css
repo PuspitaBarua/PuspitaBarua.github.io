@@ -834,7 +834,7 @@ a:hover {
 
 .profile-image {
     width: 400px;
-    height: 600px;
+    height: 500px;
     border-radius: 50%;
     background: var(--gradient-primary);
     border: 8px solid var(--bg-primary);
