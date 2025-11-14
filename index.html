@@ -4,38 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puspita Barua | ETE Student at CUET</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">PB</div>
+            <div class="preloader-text">Loading Excellence...</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <div class="nav-logo" data-aos="fade-right">
                 <span class="logo-text">PB</span>
+                <div class="logo-subtitle">Portfolio</div>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="100">
+                    <a href="#home" class="nav-link">
+                        <i class="fas fa-home nav-icon"></i>
+                        <span>Home</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="200">
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>About</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#education" class="nav-link">Education</a>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="300">
+                    <a href="#education" class="nav-link">
+                        <i class="fas fa-graduation-cap nav-icon"></i>
+                        <span>Education</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="400">
+                    <a href="#skills" class="nav-link">
+                        <i class="fas fa-code nav-icon"></i>
+                        <span>Skills</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="500">
+                    <a href="#projects" class="nav-link">
+                        <i class="fas fa-project-diagram nav-icon"></i>
+                        <span>Projects</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                <li class="nav-item" data-aos="fade-down" data-aos-delay="600">
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope nav-icon"></i>
+                        <span>Contact</span>
+                    </a>
                 </li>
             </ul>
-            <div class="nav-controls">
+            <div class="nav-controls" data-aos="fade-left">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
@@ -50,52 +85,111 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="gradient-text">Puspita Barua</span>
+                    <div class="hero-greeting" data-aos="fade-up">
+                        <span class="greeting-text">Hello, I'm</span>
+                        <div class="greeting-wave">👋</div>
+                    </div>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                        <span class="gradient-text typing-text">Puspita Barua</span>
                     </h1>
-                    <p class="hero-subtitle">Electronics & Telecommunication Engineering Student</p>
-                    <p class="hero-description">CUET • Passionate about Digital Systems, IoT & Communication Technologies</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                        <span class="typewriter">Electronics & Telecommunication Engineering Student</span>
+                    </p>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fas fa-university"></i>
+                        CUET • Passionate about Digital Systems, IoT & Communication Technologies
+                    </p>
+                    
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-label">Years Study</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="10">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="1000">
+                        <a href="#contact" class="btn btn-primary btn-glow">
                             <i class="fas fa-envelope"></i>
-                            Get In Touch
+                            <span>Get In Touch</span>
+                            <div class="btn-ripple"></div>
                         </a>
-                        <a href="#projects" class="btn btn-secondary">
+                        <a href="#projects" class="btn btn-secondary btn-magnetic">
                             <i class="fas fa-code"></i>
-                            View Projects
+                            <span>View Projects</span>
                         </a>
-                        <a href="#" class="btn btn-cv" id="download-cv">
+                        <a href="#" class="btn btn-outline btn-cv" id="download-cv">
                             <i class="fas fa-download"></i>
-                            Download CV
+                            <span>Download CV</span>
                         </a>
                     </div>
-                    <div class="social-links">
+                    
+                    <div class="social-links" data-aos="fade-up" data-aos-delay="1200">
                         <a href="mailto:puspitabarua24.ctg@gmail.com" class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
+                            <span class="social-tooltip">Email</span>
                         </a>
                         <a href="https://github.com/PuspitaBarua" target="_blank" class="social-link" aria-label="GitHub">
                             <i class="fab fa-github"></i>
+                            <span class="social-tooltip">GitHub</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            <span class="social-tooltip">LinkedIn</span>
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
+                
+                <div class="hero-image" data-aos="zoom-in" data-aos-delay="800">
                     <div class="image-container">
                         <div class="profile-image">
                             <img src="Screenshot 2025-11-14 005439.png" alt="Puspita Barua" class="profile-photo">
+                            <div class="image-overlay">
+                                <div class="overlay-text">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Professional</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="floating-elements">
-                            <div class="floating-element element-1"></div>
-                            <div class="floating-element element-2"></div>
-                            <div class="floating-element element-3"></div>
+                            <div class="floating-element element-1">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="floating-element element-2">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="floating-element element-3">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="floating-element element-4">
+                                <i class="fas fa-cog"></i>
+                            </div>
                         </div>
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring-2"></div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
+            
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1400">
                 <a href="#about" class="scroll-link">
+                    <span class="scroll-text">Scroll Down</span>
                     <i class="fas fa-chevron-down"></i>
                 </a>
             </div>
@@ -105,38 +199,91 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">About Me</h2>
                 <div class="section-divider"></div>
+                <p class="section-description">Passionate about creating innovative solutions at the intersection of hardware and software</p>
             </div>
+            
             <div class="about-content">
-                <div class="about-text">
-                    <p class="about-paragraph">
-                        As an Electronics & Telecommunication Engineering student at CUET, I'm driven by the fascinating world where digital innovation meets real-world applications. My journey in technology began with fundamentals and has evolved into exploring cutting-edge domains.
-                    </p>
-                    <p class="about-paragraph">
-                        I thrive in the intersection of hardware and software, where I can leverage my understanding of circuit design, signal processing, and programming to develop innovative IoT solutions and communication systems.
-                    </p>
-                    <p class="about-paragraph">
-                        Beyond academics, I'm constantly exploring emerging technologies, contributing to projects, and building systems that have the potential to make a meaningful impact.
-                    </p>
+                <div class="about-text" data-aos="fade-right">
+                    <div class="about-card">
+                        <div class="card-header">
+                            <i class="fas fa-user-graduate card-icon"></i>
+                            <h3>My Journey</h3>
+                        </div>
+                        <p class="about-paragraph">
+                            As an Electronics & Telecommunication Engineering student at CUET, I'm driven by the fascinating world where digital innovation meets real-world applications. My journey in technology began with fundamentals and has evolved into exploring cutting-edge domains.
+                        </p>
+                        <p class="about-paragraph">
+                            I thrive in the intersection of hardware and software, where I can leverage my understanding of circuit design, signal processing, and programming to develop innovative IoT solutions and communication systems.
+                        </p>
+                        <p class="about-paragraph">
+                            Beyond academics, I'm constantly exploring emerging technologies, contributing to projects, and building systems that have the potential to make a meaningful impact.
+                        </p>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Innovation Focused</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>Future Ready</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Passionate Learner</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Years of Study</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Technologies</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Learning Journey</div>
+                
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-number" data-count="3">0</div>
+                            <div class="stat-label">Years of Study</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" data-progress="75"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="stat-number" data-count="10">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" data-progress="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Technologies</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Learning Journey</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar infinite-progress"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,13 +293,17 @@
     <!-- Education Section -->
     <section class="education" id="education">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Education Journey</h2>
                 <div class="section-divider"></div>
+                <p class="section-description">Building a strong foundation in engineering and technology</p>
             </div>
+            
             <div class="education-timeline">
-                <div class="timeline-item active">
-                    <div class="timeline-marker"></div>
+                <div class="timeline-item active" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3 class="timeline-title">Bachelor of Science</h3>
@@ -161,13 +312,24 @@
                         <h4 class="timeline-subtitle">Chittagong University of Engineering & Technology (CUET)</h4>
                         <p class="timeline-description">Electronics & Telecommunication Engineering</p>
                         <div class="timeline-details">
-                            <span class="timeline-period">Level 3, Term 2 (Ongoing)</span>
+                            <span class="timeline-period">
+                                <i class="fas fa-calendar"></i>
+                                Level 3, Term 2 (Ongoing)
+                            </span>
                             <span class="timeline-gpa">Pursuing Excellence</span>
+                        </div>
+                        <div class="timeline-skills">
+                            <span class="skill-chip">Digital Systems</span>
+                            <span class="skill-chip">Communication</span>
+                            <span class="skill-chip">Signal Processing</span>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-marker">
+                        <i class="fas fa-school"></i>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3 class="timeline-title">Higher Secondary Certificate (HSC)</h3>
@@ -176,13 +338,23 @@
                         <h4 class="timeline-subtitle">Chittagong College</h4>
                         <p class="timeline-description">Science Group</p>
                         <div class="timeline-details">
-                            <span class="timeline-period">Year: 2021</span>
+                            <span class="timeline-period">
+                                <i class="fas fa-calendar"></i>
+                                Year: 2021
+                            </span>
                             <span class="timeline-gpa">GPA: 5.00</span>
+                        </div>
+                        <div class="timeline-achievement">
+                            <i class="fas fa-trophy"></i>
+                            <span>Perfect Score Achievement</span>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-marker">
+                        <i class="fas fa-book"></i>
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3 class="timeline-title">Secondary School Certificate (SSC)</h3>
@@ -191,8 +363,15 @@
                         <h4 class="timeline-subtitle">Chittagong Engineering University School & College</h4>
                         <p class="timeline-description">Science Group</p>
                         <div class="timeline-details">
-                            <span class="timeline-period">Year: 2019</span>
+                            <span class="timeline-period">
+                                <i class="fas fa-calendar"></i>
+                                Year: 2019
+                            </span>
                             <span class="timeline-gpa">GPA: 5.00</span>
+                        </div>
+                        <div class="timeline-achievement">
+                            <i class="fas fa-star"></i>
+                            <span>Excellence in Sciences</span>
                         </div>
                     </div>
                 </div>
@@ -203,43 +382,62 @@
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Skills & Technologies</h2>
                 <div class="section-divider"></div>
+                <p class="section-description">Expertise across multiple domains of technology and engineering</p>
             </div>
+            
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <div class="skill-header">
-                        <i class="fas fa-code skill-icon"></i>
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-code skill-icon"></i>
+                        </div>
                         <h3 class="skill-title">Programming Languages</h3>
                     </div>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">C</span>
+                            <div class="skill-info">
+                                <span class="skill-name">C</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="90"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">C++</span>
+                            <div class="skill-info">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="85"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Python</span>
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="80"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Java</span>
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="75"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">PHP</span>
+                            <div class="skill-info">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="70"></div>
                             </div>
@@ -247,32 +445,46 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-header">
-                        <i class="fas fa-globe skill-icon"></i>
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-globe skill-icon"></i>
+                        </div>
                         <h3 class="skill-title">Web Technologies</h3>
                     </div>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">HTML</span>
+                            <div class="skill-info">
+                                <span class="skill-name">HTML</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="95"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">CSS</span>
+                            <div class="skill-info">
+                                <span class="skill-name">CSS</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="90"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="85"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">MySQL</span>
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="80"></div>
                             </div>
@@ -280,39 +492,72 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
                     <div class="skill-header">
-                        <i class="fas fa-tools skill-icon"></i>
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-tools skill-icon"></i>
+                        </div>
                         <h3 class="skill-title">Software & Tools</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">MATLAB</span>
-                        <span class="skill-tag">Proteus</span>
-                        <span class="skill-tag">ADS</span>
+                        <span class="skill-tag">
+                            <i class="fas fa-calculator"></i>
+                            MATLAB
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-microchip"></i>
+                            Proteus
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-signal"></i>
+                            ADS
+                        </span>
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
                     <div class="skill-header">
-                        <i class="fas fa-microchip skill-icon"></i>
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-microchip skill-icon"></i>
+                        </div>
                         <h3 class="skill-title">Hardware & Embedded</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Arduino</span>
-                        <span class="skill-tag">Microcontroller</span>
-                        <span class="skill-tag">Circuit Design</span>
+                        <span class="skill-tag">
+                            <i class="fab fa-arduino"></i>
+                            Arduino
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-memory"></i>
+                            Microcontroller
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-project-diagram"></i>
+                            Circuit Design
+                        </span>
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
                     <div class="skill-header">
-                        <i class="fas fa-lightbulb skill-icon"></i>
+                        <div class="skill-icon-wrapper">
+                            <i class="fas fa-lightbulb skill-icon"></i>
+                        </div>
                         <h3 class="skill-title">Research Interests</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Communication Systems</span>
-                        <span class="skill-tag">Internet of Things</span>
-                        <span class="skill-tag">Digital Signal Processing</span>
+                        <span class="skill-tag">
+                            <i class="fas fa-broadcast-tower"></i>
+                            Communication Systems
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-wifi"></i>
+                            Internet of Things
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-wave-square"></i>
+                            Digital Signal Processing
+                        </span>
                     </div>
                 </div>
             </div>
@@ -322,12 +567,14 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="section-divider"></div>
+                <p class="section-description">Innovative solutions combining theory with practical implementation</p>
             </div>
+            
             <div class="projects-grid">
-                <div class="project-card featured">
+                <div class="project-card featured" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -342,16 +589,36 @@
                         <div class="project-icon">
                             <i class="fas fa-lock"></i>
                         </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-item">Digital Logic</span>
+                            <span class="tech-item">Hardware</span>
+                        </div>
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Smart Guard: Hybrid Authentication Door Lock</h3>
-                            <span class="project-badge featured-badge">Featured</span>
+                            <span class="project-badge featured-badge">
+                                <i class="fas fa-star"></i>
+                                Featured
+                            </span>
                         </div>
-                        <p class="project-meta">Digital Logic Design • Level 2, Term 2</p>
+                        <p class="project-meta">
+                            <i class="fas fa-calendar"></i>
+                            Digital Logic Design • Level 2, Term 2
+                        </p>
                         <p class="project-description">
                             Developed a secure door lock system combining multiple authentication methods with solenoid mechanism for enhanced security and reliability.
                         </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Multi-layer Security</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Automated Control</span>
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">Digital Logic</span>
                             <span class="project-tag">Authentication</span>
@@ -361,7 +628,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -376,15 +643,32 @@
                         <div class="project-icon">
                             <i class="fas fa-signal"></i>
                         </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-item">MATLAB</span>
+                            <span class="tech-item">Simulation</span>
+                        </div>
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">ASK Modulation & Demodulation System</h3>
                         </div>
-                        <p class="project-meta">Digital Communication • Level 3, Term 1</p>
+                        <p class="project-meta">
+                            <i class="fas fa-calendar"></i>
+                            Digital Communication • Level 3, Term 1
+                        </p>
                         <p class="project-description">
                             Design and implementation of Amplitude Shift Keying modulation and demodulation system with comparative analysis of simulation versus practical results.
                         </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-wave-square"></i>
+                                <span>Signal Processing</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Performance Analysis</span>
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">Modulation</span>
                             <span class="project-tag">Signal Processing</span>
@@ -394,7 +678,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -409,15 +693,32 @@
                         <div class="project-icon">
                             <i class="fas fa-utensils"></i>
                         </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-item">PHP</span>
+                            <span class="tech-item">MySQL</span>
+                        </div>
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Cookistry - Food Recipe Platform</h3>
                         </div>
-                        <p class="project-meta">Internet Programming • Level 3, Term 1</p>
+                        <p class="project-meta">
+                            <i class="fas fa-calendar"></i>
+                            Internet Programming • Level 3, Term 1
+                        </p>
                         <p class="project-description">
                             A comprehensive web-based platform for discovering, sharing, and managing food recipes with an intuitive user interface and database integration.
                         </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-database"></i>
+                                <span>Database Integration</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-users"></i>
+                                <span>User Management</span>
+                            </div>
+                        </div>
                         <div class="project-tags">
                             <span class="project-tag">Web Development</span>
                             <span class="project-tag">PHP</span>
@@ -433,66 +734,117 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="section-divider"></div>
                 <p class="section-description">
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect and create something amazing together!
                 </p>
             </div>
+            
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Email</h4>
+                                <a href="mailto:puspitabarua24.ctg@gmail.com" class="contact-link">
+                                    puspitabarua24.ctg@gmail.com
+                                </a>
+                                <p class="contact-subtitle">Send me an email</p>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4 class="contact-title">Email</h4>
-                            <a href="mailto:puspitabarua24.ctg@gmail.com" class="contact-link">
-                                puspitabarua24.ctg@gmail.com
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Location</h4>
+                                <p class="contact-text">Chittagong, Bangladesh</p>
+                                <p class="contact-subtitle">Available for opportunities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-title">University</h4>
+                                <p class="contact-text">CUET</p>
+                                <p class="contact-subtitle">Electronics & Telecommunication</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Follow Me</h4>
+                        <div class="social-links-contact">
+                            <a href="mailto:puspitabarua24.ctg@gmail.com" class="social-link-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="https://github.com/PuspitaBarua" target="_blank" class="social-link-contact">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-link-contact">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
                             </a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="contact-title">Location</h4>
-                            <p class="contact-text">Chittagong, Bangladesh</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="contact-title">University</h4>
-                            <p class="contact-text">CUET</p>
-                        </div>
-                    </div>
                 </div>
-                <div class="contact-form-container">
+                
+                <div class="contact-form-container" data-aos="fade-left">
                     <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    Name
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <div class="form-focus-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <div class="form-focus-line"></div>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
+                            <label for="subject" class="form-label">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
                             <input type="text" id="subject" name="subject" class="form-input" required>
+                            <div class="form-focus-line"></div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
+                            <label for="message" class="form-label">
+                                <i class="fas fa-comment"></i>
+                                Message
+                            </label>
                             <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            <div class="form-focus-line"></div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
+                        
+                        <button type="submit" class="btn btn-primary btn-full btn-submit">
                             <i class="fas fa-paper-plane"></i>
-                            Send Message
+                            <span>Send Message</span>
+                            <div class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
                         </button>
                     </form>
                 </div>
@@ -505,17 +857,27 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-main">
-                    <div class="footer-brand">
+                    <div class="footer-brand" data-aos="fade-up">
                         <div class="footer-logo">
                             <span class="logo-text">PB</span>
                         </div>
                         <h3 class="footer-name">Puspita Barua</h3>
                         <p class="footer-title">Electronics & Telecommunication Engineering Student</p>
                         <p class="footer-university">Chittagong University of Engineering & Technology</p>
+                        
+                        <div class="footer-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Innovation distinguishes between a leader and a follower."</p>
+                            <span>- Steve Jobs</span>
+                        </div>
                     </div>
+                    
                     <div class="footer-links">
-                        <div class="footer-section">
-                            <h4 class="footer-heading">Quick Links</h4>
+                        <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="footer-heading">
+                                <i class="fas fa-link"></i>
+                                Quick Links
+                            </h4>
                             <ul class="footer-list">
                                 <li><a href="#home" class="footer-link">Home</a></li>
                                 <li><a href="#about" class="footer-link">About</a></li>
@@ -523,8 +885,12 @@
                                 <li><a href="#skills" class="footer-link">Skills</a></li>
                             </ul>
                         </div>
-                        <div class="footer-section">
-                            <h4 class="footer-heading">Projects</h4>
+                        
+                        <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="footer-heading">
+                                <i class="fas fa-project-diagram"></i>
+                                Projects
+                            </h4>
                             <ul class="footer-list">
                                 <li><a href="#projects" class="footer-link">All Projects</a></li>
                                 <li><a href="#" class="footer-link">Smart Guard</a></li>
@@ -532,8 +898,12 @@
                                 <li><a href="#" class="footer-link">Cookistry</a></li>
                             </ul>
                         </div>
-                        <div class="footer-section">
-                            <h4 class="footer-heading">Connect</h4>
+                        
+                        <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="footer-heading">
+                                <i class="fas fa-handshake"></i>
+                                Connect
+                            </h4>
                             <ul class="footer-list">
                                 <li><a href="#contact" class="footer-link">Contact</a></li>
                                 <li><a href="mailto:puspitabarua24.ctg@gmail.com" class="footer-link">Email</a></li>
@@ -543,7 +913,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-social">
+                
+                <div class="footer-social" data-aos="fade-up" data-aos-delay="400">
+                    <h4>Let's Connect</h4>
                     <div class="social-links">
                         <a href="mailto:puspitabarua24.ctg@gmail.com" class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
@@ -551,19 +923,35 @@
                         <a href="https://github.com/PuspitaBarua" target="_blank" class="social-link" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <div class="footer-divider"></div>
-                <div class="footer-copyright">
+                <div class="footer-copyright" data-aos="fade-up">
                     <p>&copy; 2024 Puspita Barua. All rights reserved.</p>
-                    <p class="footer-made">Made with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+                    <p class="footer-made">
+                        Made with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i> in Bangladesh
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="src/script.js"></script>
 </body>
 </html>
