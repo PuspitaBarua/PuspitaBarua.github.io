@@ -848,8 +848,8 @@ a:hover {
 }
 
 .profile-photo {
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
     object-fit: cover;
     border-radius: 50%;
 }
